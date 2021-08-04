@@ -1,3 +1,4 @@
+
 #二維清單
 
 products = []
@@ -21,3 +22,10 @@ for p in products:
 #印出小清單的第一項(物品)
 for p in products:
     print(p[0])
+
+#寫檔
+with open('products.csv', 'w', encoding='utf-8') as f:        #csv可用ecxel打開 用逗點可以隔開   encoding修正編碼中文亂碼問題 
+    f.write('商品,價格\n')
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n')
+
