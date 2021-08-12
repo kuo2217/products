@@ -1,7 +1,20 @@
+#讀取檔案
+products = []
+with open('products.csv', 'r') as f:
+    for line in f:
+        if '商品,價格' in line:
+            continue        #使用continue不會跳出迴圈 但會略過7 8行(不執行) 重新做迴圈
+        name, price = line.strip().split(',')     #strip()分割/n(換行) 因為用逗點分割 所以可以儲存到兩個變數中
+        products.append([name, price])
+print(products)
+
+
+
+
 
 #二維清單
 
-products = []
+
 while True:
     name = input('請輸入商品名稱: ')
     if name == 'q':
